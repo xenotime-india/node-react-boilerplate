@@ -1,0 +1,61 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "lib/Server.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "nodemon": "^1.11.0",
+    "react-addons-perf": "^15.4.2",
+    "react-test-renderer": "^15.5.4",
+    "redux-devtools": "^3.4.0",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1"
+  },
+  "scripts": {
+    "nodemon": "nodemon --exec babel-node src/server/index.js",
+    "webpack": "webpack -wd",
+    "dev": "yarn nodemon",
+    "start": "yarn build && babel-node src/server/index.js",
+    "test": "jest --watch",
+    "build": "rimraf dist && NODE_ENV=production webpack -p",
+    "lint": "./node_modules/.bin/eslint --ignore-pattern *_Test.js /src/**/*.js",
+    "lint:watch": "yarn lint -- --watch",
+    "prepush": "yarn lint"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "config": "^1.26.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "prop-types": "^15.5.10",
+    "qs": "^6.5.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^3.5.6"
+  }
+}
